@@ -31,8 +31,11 @@ public class MyIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+
         int tm = intent.getIntExtra("time", 0);
         String label = intent.getStringExtra("task");
+
+
         Log.d(TAG, "onHandleIntent start: " + label);
         try {
             TimeUnit.SECONDS.sleep(tm);

@@ -3,10 +3,12 @@
     package="com.yst.sms.multithreadproject">
 
     <uses-sdk android:minSdkVersion="16" />
-
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+   <!-- <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> -->
+
 
     <application
         android:allowBackup="true"
@@ -26,6 +28,13 @@
         <service android:name=".MyIntentService" />
 
         <activity android:name=".NotificationReceiverActivity"></activity>
+
+        <receiver android:name=".SampleBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".AlarmReceiver"/>
     </application>
 
 </manifest>
