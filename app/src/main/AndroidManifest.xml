@@ -23,7 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivitySecond" />
+        <activity android:name=".ActivitySecond" >
+            <intent-filter>
+                <action android:name="ru.startandroid.intent.action.actsecond"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+            </activity>
 
         <service android:name=".MyIntentService" />
 

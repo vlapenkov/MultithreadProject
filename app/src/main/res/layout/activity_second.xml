@@ -15,6 +15,15 @@
         android:text="Start service from this activity"
         android:id="@+id/Button1"
         android:layout_marginTop="50px"
+        android:onClick="ButtonClick" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open main activity"
+        android:id="@+id/button3"
+        android:layout_marginTop="150px"
+        android:layout_gravity="center_horizontal"
         android:onClick="Button3Click" />
 
 </RelativeLayout>
