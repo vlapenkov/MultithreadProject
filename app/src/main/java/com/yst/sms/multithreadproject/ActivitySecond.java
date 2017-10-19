@@ -32,7 +32,7 @@ public class ActivitySecond extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+/*
     @Override
     protected void onStart() {
         super.onStart();
@@ -62,4 +62,5 @@ public class ActivitySecond extends AppCompatActivity {
         super.onDestroy();
         Log.d(TAG, "ActivitySecond: onDestroy()");
     }
+    */
 }

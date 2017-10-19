@@ -8,6 +8,9 @@ import android.util.Log;
 /**
  * Created by user on 11.09.2017.
  */
+
+//Запуск сервиса MyIntentService через AlarmReceiver , т.е. через определенное время
+
 public class AlarmReceiver extends BroadcastReceiver
 {
     private final String TAG = "AlarmReceiver";

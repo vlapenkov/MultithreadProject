@@ -37,44 +37,15 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             final  TextView text1 =(TextView) findViewById(R.id.Text1);
-      //      text1.setText("Job done!");
-
-            text1.setText(Integer.toString(msg.arg1));
+          text1.setText(Integer.toString(msg.arg1));
         }
     };
 
     int counter=0;
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "MainActivity: onStart()");
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "MainActivity: onResume()");
-    }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "MainActivity: onPause()");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "MainActivity: onStop()");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "MainActivity: onDestroy()");
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -102,24 +73,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-               //     Thread.sleep(10000);
-                //    synchronized (lock)
+                 //   synchronized (lock)
                     {
                         TimeUnit.SECONDS.sleep(5);
-                   // wait(5000);
-                    //    Thread.sleep(5000);
-
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-               Message msg =   handler.obtainMessage(1,++counter,0);
+                 Message msg =   handler.obtainMessage(1,++counter,0);
                 handler.sendMessage( msg);
                 // this code throws exception
                 //   text1.setText(Integer.toString(++counter));
             }
         };
+
 //  кнопка 1 - запуск асинхронного потока вне птока данной активности
         but1.setOnClickListener(new View.OnClickListener() {
 
@@ -133,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
     public void Button2Click(View v){
     //    Intent intent = new Intent(this, ActivitySecond.class);
             Intent intent = new Intent("ru.startandroid.intent.action.actsecond");
-
 
   //      intent.putExtra(PRODUCT_ID_MESSAGE, Long.toString(id));
 
@@ -179,16 +145,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-/*
-    public class MyBroadcastReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            String result = intent
-                    .getStringExtra(MyIntentService.EXTRA_KEY_OUT);
-            text1.setText(result);
-//        mInfoTextView.setText(result);
-        }
-    }
-    */
 }

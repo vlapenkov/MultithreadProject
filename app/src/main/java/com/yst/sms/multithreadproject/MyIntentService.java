@@ -15,6 +15,9 @@ import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+/*
+Сервис не привязанный к активности
+ */
 public class MyIntentService extends IntentService {
     public static final String ACTION_MYINTENTSERVICE = "ru.alexanderklimov.intentservice.RESPONSE";
     public static final String EXTRA_KEY_OUT = "EXTRA_OUT";
